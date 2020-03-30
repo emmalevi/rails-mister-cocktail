@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class= "title">Add a review for <%= @cocktail.name %></h1>
+  <%= simple_form_for [@cocktail, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.button :submit, class: 'button' %>
+  <% end %>
+  <div class="text-center mt-5">
+    <%= link_to "back to all cocktails", cocktails_path, class: 'button' %>
+  </div>
+</div>
+
