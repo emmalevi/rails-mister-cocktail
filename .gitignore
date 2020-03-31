@@ -31,3 +31,6 @@ yarn-debug.log*
 .yarn-integrity
 .env*
 .env*
+public/assets
+public/assets
+public/assets

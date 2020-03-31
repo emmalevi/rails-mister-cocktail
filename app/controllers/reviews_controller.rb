@@ -25,4 +25,15 @@ class ReviewsController < ApplicationController
   def set_cocktailid
   @cocktail = Cocktail.find(params[:cocktail_id])
   end
+
+  def calculate_cocktail_rating
+    cocktail = self.cocktail
+    number_of_reviews = cocktail.reviews.count
+    sum_of_review_ratings = 0
+    cocktail.reviews.each do |review|
+      sum_of_review_ratings += review.rating
+    end
+    cocktail.average_rating = sum_of_review_ratings / number_of_reviews.to_f
+    cocktail.save
+  end
 end

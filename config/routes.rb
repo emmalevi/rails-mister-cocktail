@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
-  get    "cocktails",          to: "cocktails#index"
+  root to: 'cocktails#index'
 
-  get    "cocktails/new",      to: "cocktails#new",  as: :new_cocktail
-  post   "cocktails",          to: "cocktails#create"
+  # get    "cocktails",          to: "cocktails#index"
 
-  # NB: The `show` route needs to be *after* `new` route.
-  get    "cocktails/:id",      to: "cocktails#show", as: :cocktail
+  # get    "cocktails/new",      to: "cocktails#new",  as: :new_cocktail
+  # post   "cocktails",          to: "cocktails#create"
 
-  get    "cocktails/:id/edit", to: "cocktails#edit", as: :edit_cocktail
-  patch  "cocktails/:id",      to: "cocktails#update"
+  # # NB: The `show` route needs to be *after* `new` route.
+  # get    "cocktails/:id",      to: "cocktails#show", as: :cocktail
 
-  delete "cocktails/:id",      to: "cocktails#destroy"
+  # get    "cocktails/:id/edit", to: "cocktails#edit", as: :edit_cocktail
+  # patch  "cocktails/:id",      to: "cocktails#update"
+
+  # delete "cocktails/:id",      to: "cocktails#destroy"
+
+  resources :cocktails do
+    resources :doses
+    resources :reviews
+  end
 end

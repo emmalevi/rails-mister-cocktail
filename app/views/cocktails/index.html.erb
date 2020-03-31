@@ -1,8 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536599424071-0b215a388ba7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=300);">
+<div class="banner" id="photo" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1481142378093-d0289ea07b78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
   <div class="container">
-    <h1>Cocktails<strong></h1>
+    <h1 id="title">Mister<strong></h1>
+    <h1 id="subtitle">Cocktails<strong></h1>
       <p><span id="banner-typed-text"></span></p>
-    <%= link_to "Add a new cocktail", new_cocktail_path, class: "button" %>
+    <p> <%= link_to "ADD COCKTAIL", new_cocktail_path, class: "button" %> </p>
   </div>
 </div>
 <div class="container">
@@ -14,9 +15,8 @@
           <div class="cocktail-card-body">
             <div class="card_title_flex">
               <h5><%= cocktail.name.capitalize %></h5>
-              <h5>Avg. rating: <%= cocktail.average_rating %></h5>
             </div>
-            <%= link_to "See Details", cocktail_path(cocktail)%>
+            <%= link_to "Get a taste", cocktail_path(cocktail), class: "btn btn-flat" %>
           </div>
         </div>
       </div>

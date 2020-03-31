@@ -9,10 +9,11 @@ def show
   @dose = Dose.new
   split = @cocktail.name.split
   @capitalized_name = split.map { |word| word.capitalize }.join(" ")
+  @average_rating = calculate_cocktail_rating
 end
 
 def new
-  @cocktails = Cocktail.new
+  @cocktail = Cocktail.new
 end
 
 def edit
@@ -39,12 +40,22 @@ end
 
 
 private
-def cocktail_params
-  params.require(:cocktail).permit(:name, :ingredient, :dose, :photo)
-end
+  def cocktail_params
+    params.require(:cocktail).permit(:name, :ingredient, :dose, :photo)
+  end
 
-def set_cocktail
-  @cocktail = Cocktail.find(params[:id])
-end
+  def set_cocktail
+    @cocktail = Cocktail.find(params[:id])
+  end
+
+  def calculate_cocktail_rating
+    cocktail = set_cocktail
+    number_of_reviews = cocktail.reviews.count
+    sum_of_review_ratings = 0
+    cocktail.reviews.each do |review|
+      sum_of_review_ratings += review.rating
+    end
+    average_rating = sum_of_review_ratings / number_of_reviews.to_f
+  end
 end
 

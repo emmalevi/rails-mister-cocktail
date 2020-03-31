@@ -20,34 +20,22 @@
   // height: 45%;
   padding-top: 16px;
 
-  a {
-    position: absolute;
-    bottom: 16px;
-    left: 2%;
-    background-color: #FF9195;
-    padding: 4px;
-    color: white;
-    border-radius: 4px;
-    font-size: 12px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
-  }
 }
 
-a:hover{
-  text-decoration: none;
-  box-shadow: 2px 2px 4px #C67174;
-}
 
 .card_title_flex {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-
+}
   h5 {
-  font-size: 16px;
-
-  }
+  font-family: "Pinyon Script", serif;
+  font-style: bold;
+  color: black;
+  letter-spacing: .05em;
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 // .cocktail-card-title {

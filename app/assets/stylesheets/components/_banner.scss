@@ -1,7 +1,49 @@
 .banner {
-  background-size: cover;
+  // background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 200px 0;
+  // height: 500%;
+  background: url(images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+#banner-typed-text {
+  color: white;
+}
+
+#photo {
+  top: 0;
+  left: 0;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#title {
+  font-family: "Pinyon Script", serif;
+  color: #FFA33E;
+  margin: 0;
+  padding: 0;
+  font-size: 110px;
+}
+
+#subtitle {
+  font-family: "Pinyon Script", serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  letter-spacing: .05em;
+  font-size: 80px;
+  position: relative;
+  top: -30px;
+  left: 50px;
+  font-weight: 700;
+  line-height: 40px;
 }
 
 .banner h1 {
@@ -10,6 +52,9 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 60px;
   font-weight: bold;
+   padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  position: relative;
 }
 
 .banner p {
@@ -18,3 +63,8 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+h2 {
+    font-family: "Pinyon Script", serif;
+}
+
