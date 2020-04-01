@@ -18,6 +18,13 @@
   padding: 0;
   text-decoration: none;
   position: top;
+  -webkit-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s;
+    cursor: pointer;
+    display: block;
+    line-height: 36px;
+    float: left;
 
 }
 

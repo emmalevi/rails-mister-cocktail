@@ -1,22 +1,50 @@
+
+<div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+  <h1 id= "titleshow"><%= @capitalized_name %></h1>
+</div>
+
 <div class="container show">
-  <h1 id= "title"><%= @capitalized_name %></h1>
-  <h3><%= @average_rating %></h3>
-  <div class='cocktail-show-image'> <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %> </div>
+  <!-- <div class='cocktail-show-image'> <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %> </div> -->
     <div class="text-center mt-0">
       <% @cocktail.doses.each do |dose| %>
         <p><%= dose.description %>: <%= dose.ingredient.name %> <%= link_to "Delete dose", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-flat"%></p>
       <% end %>
     </div>
-  <div>
-  <h2 class="text-center mt-4">Add an ingredient</h2>
+<div class="container show mb-5">
+  <div class="text-center mb-5 mt-3">
+    <%= link_to "Back to bar", cocktails_path, class: "btn btn-flat" %>
+    <%= link_to "Add a review", new_cocktail_review_path(@cocktail), class: "btn btn-flat" %>
+    <%= link_to "Delete this cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure you want to delete this cocktail?" }, class: "btn btn-flat" %>
+  </div>
+</div>
+</div>
+
+  <div class="text-center mb-5 mt-3">
+<!--     <ul class="list-inline tabs-underlined text-center mb-5 mt-3">
+  <li>
+    <%= link_to "Back to bar", cocktails_path, class: "tab-underlined active" %>
+  </li>
+  <li>
+    <%= link_to "Add a review", new_cocktail_review_path(@cocktail), class: "tab-underlined active" %>
+  </li>
+  <li>
+    <%= link_to "Delete this cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure you want to delete this cocktail?" }, class: "tab-underlined active" %>
+  </li>
+</ul> -->
+</div>
+</div>
+
+  <div class="container show">
+  <h2 class="text-center mt-4" id="ingredient">Add an ingredient</h2>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :description %>
     <%= f.input :ingredient_id, collection: Ingredient.all, input_html: { class: 'select2' }, include_hidden: false %>
     <%= f.button :submit, class: "btn btn-flat" %>
   <% end %>
   </div>
-  <div class="mt-3">
-    <h2>Reviews</h2>
+  <div class="container show mb-5">
+  <div class="mt-3 mb-5">
+    <h2 class="text-center mt-4" id="ingredient">Reviews</h2>
     <% @cocktail.reviews.each do |review| %>
       <div class="d-flex" >
       <%= review.content %>
@@ -28,10 +56,6 @@
       </div>
     <% end %>
   </div>
-  <div class="text-center mb-5 mt-3">
-    <%= link_to "Back to bar", cocktails_path, class: "btn btn-flat" %>
-    <%= link_to "Add a review", new_cocktail_review_path(@cocktail), class: "btn btn-flat" %>
-    <%= link_to "Delete this cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure you want to delete this cocktail?" }, class: "btn btn-flat" %>
-  </div>
+    </div>
 </div>
 

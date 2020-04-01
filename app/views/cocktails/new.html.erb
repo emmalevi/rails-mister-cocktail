@@ -1,14 +1,17 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1572346411800-b4d741f3e84f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+  <h1 id= "titleadd">Add a new cocktail</h1>
+</div>
+
 <div class="container mt-5">
-  <h1 class="title">Add a New Cocktail</h1>
   <div>
     <%= simple_form_for(@cocktail) do |f| %>
       <%= f.input :name %>
       <%= f.association :ingredients %>
       <%= f.input :photo, as: :file %>
-      <%= f.button :submit, class: 'button' %>
+      <%= f.button :submit, class: "btn btn-flat" %>
     <% end %>
   </div>
   <div class="text-center mt-5">
-    <%= link_to "Back to all cocktails", cocktails_path, class: 'button'%>
+    <%= link_to "Back to all cocktails", cocktails_path, class: "btn btn-flat"%>
   </div>
 </div>

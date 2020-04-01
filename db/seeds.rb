@@ -51,7 +51,6 @@ cocktail = Cocktail.new(name: 'Mimosa')
 cocktail.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 cocktail.save
 
-
 Dose.create(description: '40ml', cocktail: Cocktail.find_by(name: "Mojito"), ingredient: Ingredient.find_by(name: "Spiced rum"))
 Dose.create(description: '2 leaves', cocktail: Cocktail.find_by(name: "Mojito"), ingredient: Ingredient.find_by(name: "Lime"))
 
